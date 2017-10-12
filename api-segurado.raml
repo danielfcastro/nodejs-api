@@ -1,0 +1,55 @@
+#%RAML 1.0
+---
+title: segurado API
+baseUri: http://192.168.0.1/{version}
+version: v1
+/segurado:
+  get:
+    description: Select method
+    queryParameters:
+      cpf:
+        type: string
+      nome:
+        type: string
+    responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "segurado": {
+                    "Id": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                    "nome": "Daniel Ferreira Castro",
+                    "cpf": "12233445566",
+                    "profissão": "analista",
+                    "patrimonio estimado": 3000,
+                    "pep": "Não",
+                    "natureza":PF",
+                    "data de cadastro": "2017-02-12",
+                    "data de aleração": "2017-02-12",
+                    "links": [
+                      {
+                          "href": "/enderecos/e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                          "rel": "enderecos",
+                          "type" : "GET"
+                      },
+                      {
+                          "href": "/telefones/e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                          "rel": "telefones",
+                          "type" : "GET"
+                      }
+                  ]
+                  },
+                  "success": true,
+                  "status": 200
+                }
+  post:
+    description: Update method
+  put:
+    description: Insert method
+    queryParameters:
+      access_token:
+        displayName: Access Token
+        type: string
+        description: Token giving you permission to make call
+        required: true

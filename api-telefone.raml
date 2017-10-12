@@ -1,0 +1,60 @@
+#%RAML 1.0
+---
+title: telefone API
+baseUri: http://192.168.0.1/{version}
+version: v1
+/telefone:
+  get:
+    description: Select method
+    queryParameters:
+      Id:
+        type: string
+    responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                "telefones" : [
+                {
+                  "Id":"9aab6053-d95b-46ae-b2a6-fef0c97826fd",
+                  "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                  "DDD":"021",
+                  "Telefone":"90101-0101",
+                  "Tipo":"Celular Residencial"
+                },
+                {
+                  "Id":"9aab6053-d95b-46ae-b2a6-fef0c97826fe",
+                  "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                  "DDD":"021",
+                  "Telefone":"90101-0102",
+                  "Tipo":"Celular Comercial"
+                },
+                {
+                  "Id":"9aab6053-d95b-46ae-b2a6-fef0c97826ff",
+                  "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                  "DDD":"021",
+                  "Telefone":"3101-0101",
+                  "Tipo":"Fixo Residencial"
+                },
+                {
+                  "Id":"9aab6053-d95b-46ae-b2a6-fef0c9782700",
+                  "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                  "DDD":"021",
+                  "Telefone":"3101-0102",
+                  "Tipo":"Fixo Comercial"
+                }
+                ]},
+                  "success": true,
+                  "status": 200
+                }
+  post:
+    description: Update method
+  put:
+    description: Insert method
+    queryParameters:
+      access_token:
+        displayName: Access Token
+        type: string
+        description: Token giving you permission to make call
+        required: true

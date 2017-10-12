@@ -1,0 +1,51 @@
+#%RAML 1.0
+---
+title: endereco API
+baseUri: http://192.168.0.1/{version}
+version: v1
+/endereco:
+  get:
+    description: Select method
+    queryParameters:
+      Id:
+        type: string
+    responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "enderecos": [
+                    {
+                    "Id":"27537756-732f-4649-94cc-a9fb265560d0",
+                    "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                    "logradouro":"Rua XPTO",
+                    "bairro":"Vila do Nada",
+                    "CEP":"11111-900",
+                    "cidade":"Rio de Janeiro",
+                    "UF":"RJ",
+                    "Tipo de Endereço": "Residencial"
+                  },
+                  {
+                  "Id":"27537756-732f-4649-94cc-a9fb265560d1",
+                  "IdDono": "e36a78ff-e346-45c6-aa49-3b0aa9774a3a",
+                  "logradouro":"Rua XPTO",
+                  "bairro":"Vila do Nada",
+                  "CEP":"11111-900",
+                  "cidade":"Rio de Janeiro",
+                  "UF":"RJ",
+                  "Tipo de Endereço": "Comercial"
+                }]},
+                  "success": true,
+                  "status": 200
+                }
+  post:
+    description: Update method
+  put:
+    description: Insert method
+    queryParameters:
+      access_token:
+        displayName: Access Token
+        type: string
+        description: Token giving you permission to make call
+        required: true
